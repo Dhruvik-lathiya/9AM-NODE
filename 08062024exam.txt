@@ -1,0 +1,18 @@
+1) 	What is nodejs?
+	Who invented nodejs?
+	When nodejs was released?
+	Which engine does node use for running js file?
+2)	What is module || package?
+	How many types of modules are present?
+	Define all types of module with example
+	Why we use packages?
+3)	How to setup nodejs project?
+	How to start nodejs project?
+4)	Define following terms:
+		nvm
+		npm
+		nvmrc
+		env
+		folder structure
+5)	Write 10 status code with explanation  
+	
