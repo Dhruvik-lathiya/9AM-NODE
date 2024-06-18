@@ -13,13 +13,24 @@ app.listen(PORT,
     }
 )
 
-
 app.use(express.json())
 
 
 app.use("/v1",router)
+app.use("/v2",router)
+app.use("/v3",router)
+app.use("/v4",router)
 
 connectDB()
+
+
+// CRUD
+// REPL
+// SOFTWARE
+// FOLDER
+// LINK
+// METHOD
+
 
 // URL
 // SERVER LOCATION
