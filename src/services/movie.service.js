@@ -6,6 +6,11 @@ const create_movie_S = (data) => {
     return Movie.create(data)
 }
 
+const delete_movie_S = (id) => {
+    return Movie.findByIdAndDelete(id)
+}
+
 module.exports = {
-    create_movie_S
+    create_movie_S,
+    delete_movie_S
 }

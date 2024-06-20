@@ -10,37 +10,11 @@ router.post(
     movie_Controller.create_movie
 )
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+router.delete(
+    "/delete-movie/:movieid/:BRTSBUS/:SMC",
+    // cb || callback || controller || business logic || driver code || function
+    movie_Controller.delete_movie
+)
 
 router.get(
     "/list",

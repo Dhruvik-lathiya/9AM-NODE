@@ -21,113 +21,34 @@ const create_movie = async(req,res) => {
         })
     }
 }
-const create_movie2 = () => {
+
+const delete_movie = async(req,res) => {
     try {
-        // Movie create in back-end
+        // const id = req.body.id
+        // service => delete => DB => MongoDB
+        // const result = await movie_Service.delete_movie_S(id)
+        // console.log(result)
+        // res => true
+        // res.status(200).json({
+        //     id:id
+        // })
+
+
+
+        // ==> PARAMS
+        console.log(req.params)
+        const id = req.params.movieid
+        const result = await movie_Service.delete_movie_S(id)
         res.status(200).json({
-            success: true,
-            message: "Route got hitted"
+            id:id
         })
     } catch (error) {
-        // try block error response
-        res.status(400).json({
-            success: false,
-            message: error.message
-        })
-    }
-}
-const create_movie345345 = () => {
-    try {
-        // Movie create in back-end
-        res.status(200).json({
-            success: true,
-            message: "Route got hitted"
-        })
-    } catch (error) {
-        // try block error response
-        res.status(400).json({
-            success: false,
-            message: error.message
-        })
-    }
-}
-const create_movie345 = () => {
-    try {
-        // Movie create in back-end
-        res.status(200).json({
-            success: true,
-            message: "Route got hitted"
-        })
-    } catch (error) {
-        // try block error response
-        res.status(400).json({
-            success: false,
-            message: error.message
-        })
-    }
-}
-const create_movie32452345 = () => {
-    try {
-        // Movie create in back-end
-        res.status(200).json({
-            success: true,
-            message: "Route got hitted"
-        })
-    } catch (error) {
-        // try block error response
-        res.status(400).json({
-            success: false,
-            message: error.message
-        })
-    }
-}
-const create_movie1213 = () => {
-    try {
-        // Movie create in back-end
-        res.status(200).json({
-            success: true,
-            message: "Route got hitted"
-        })
-    } catch (error) {
-        // try block error response
-        res.status(400).json({
-            success: false,
-            message: error.message
-        })
-    }
-}
-const create_movie11 = () => {
-    try {
-        // Movie create in back-end
-        res.status(200).json({
-            success: true,
-            message: "Route got hitted"
-        })
-    } catch (error) {
-        // try block error response
-        res.status(400).json({
-            success: false,
-            message: error.message
-        })
-    }
-}
-const create_movie12 = () => {
-    try {
-        // Movie create in back-end
-        res.status(200).json({
-            success: true,
-            message: "Route got hitted"
-        })
-    } catch (error) {
-        // try block error response
-        res.status(400).json({
-            success: false,
-            message: error.message
-        })
+        // Error => response false
     }
 }
 
+
 module.exports = {
     create_movie,
-    create_movie2
+    delete_movie
 }
