@@ -14,7 +14,7 @@ router.get(
     doc_Controller.get_doc
 )
 router.delete(
-    "/delete/:id",
+    "/delete",
     // cb
     doc_Controller.delete_doc
 )

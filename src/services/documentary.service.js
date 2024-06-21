@@ -9,8 +9,9 @@ const get_list = () => {
     return Doc.findOne()
 }
 
-const delete_doc = (id) => {
-    return Doc.findByIdAndDelete(id)
+const delete_doc = () => {
+    // return Doc.findByIdAndDelete(id)
+    return Doc.deleteMany()
 }
 
 module.exports = {

@@ -53,8 +53,8 @@ const get_doc = async(req,res) => {
 const delete_doc = async(req,res) => {
     try {
         // service
-        const id = req.params.id
-        const result = await doc_Service.delete_doc(id)
+        // const id = req.params.id
+        const result = await doc_Service.delete_doc()
         res.status(200).json({
             success:true,
             message:"Deeeleted"
