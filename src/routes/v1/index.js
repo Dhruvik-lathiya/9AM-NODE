@@ -10,7 +10,7 @@ const countryRoute = require("./country.routes")
 
 const router = express()
 
-router.use("/linking-phrase",userRoute)
+router.use("/user",userRoute)
 router.use("/movie",movieRoute)
 router.use("/series",seriesRoute)
 router.use("/admin",adminRoute)
