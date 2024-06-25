@@ -1,0 +1,3 @@
+JWT: JSONWEBTOKEN
+===> jwt.sign(payload,"SECRET")
+===> jwt.verify(token,"SECRET")

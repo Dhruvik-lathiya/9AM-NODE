@@ -1,0 +1,2 @@
+bcrypt.hash("gharno",10)
+bcrypt.compare("hacker","")
