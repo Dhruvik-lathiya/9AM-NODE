@@ -7,19 +7,19 @@ const city_Schema = mongoose.Schema(
             trim:true
         },
         // populate state
-        // state_key_custom:{
-        //     type:mongoose.Types.ObjectId,
-        //     ref:"State"
-        // },
-        // country:{
-        //     type:mongoose.Types.ObjectId,
-        //     ref:"Country"
-        // }
-        // Specific populate of admin
-        admin:{
+        sttttate:{
             type:mongoose.Types.ObjectId,
-            ref:"Admin"
+            ref:"State"
+        },
+        country:{
+            type:mongoose.Types.ObjectId,
+            ref:"Country"
         }
+        // Specific populate of admin
+        // admin:{
+        //     type:mongoose.Types.ObjectId,
+        //     ref:"Admin"
+        // }
     },
     {
         timestamps:true

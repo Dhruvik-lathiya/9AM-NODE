@@ -8,6 +8,7 @@ const cityRoute = require("./city.routes")
 const stateRoute = require("./state.routes")
 const countryRoute = require("./country.routes")
 const bcryptRoute = require("./bcrypt.routes")
+const jwtRoute = require("./jwt.routes")
 
 const router = express()
 
@@ -20,5 +21,6 @@ router.use("/city",cityRoute)
 router.use("/state",stateRoute)
 router.use("/country",countryRoute)
 router.use("/bcrypt",bcryptRoute)
+router.use("/jwt",jwtRoute)
 
 module.exports = router

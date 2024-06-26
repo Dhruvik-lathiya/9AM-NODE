@@ -24,7 +24,8 @@ const get_list = async(req,res) => {
     try {
         // service
         // const list = await City.find().populate("state_key_custom").populate("country")
-        const list = await City.find().populate("admin", { admin_name:1 })
+        // const list = await City.find().populate("admin", { admin_name:1 })
+        const list = await City.find().populate("sttttate").populate("country")
         res.status(200).json({
             message:"Dispatch",
             success:true,

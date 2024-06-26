@@ -3,6 +3,23 @@ const { series_Service } = require("../services")
 const create_series = async(req,res) => {
     try {
         const data = req.body
+
+        if(req.body.series_name.length < 4){
+            throw new Error("Series name is too small")
+        }
+
+        const searched_result = await series_Service.find_by_name(data.series_name)
+
+        console.log("======>>>>" , searched_result)
+
+        // Search same name data <= services
+        // true    // Error
+        if(searched_result){
+            throw new Error(`Series by this name ${data.series_name} already exist`)
+        }
+        // false    // Create
+
+
         // service
         const new_series = await series_Service.create_series_S(data)
         // success response
