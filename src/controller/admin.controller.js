@@ -1,4 +1,5 @@
 const { admin_Service } = require("../services")
+const nodemailer = require("nodemailer")
 
 const create_admin_C = async(req,res) => {
     try {
@@ -6,15 +7,54 @@ const create_admin_C = async(req,res) => {
         const data = req.body
         const new_admin = await admin_Service.create_admin_S(data)
 
-        console.log(new_admin)
 
         if(!new_admin){
             throw new Error("Something went wrong")
         }
 
+
+        // Send mail to admin email
+
+        // nodemailer
+        // transport <= nodemailer.createtransport(login_info)
+        // {
+        // host: smtp.gmail.com,
+        // port: 587,
+        // auth: {
+        //          user:"dhruviklathiya0811@gmail.com"
+        //          pass:"gatayfphxfziqjsk"
+        //          }
+        // }
+
+        const transport = nodemailer.createTransport({
+                host: "smtp.gmail.com",
+                port: 587,
+                auth: {
+                    user:"dhruviklathiya0811@gmail.com",
+                    pass:"gatayfphxfziqjsk"
+                 }
+        })
+
+
+        // const mail_sent = await transport.sendMail(mail_info)
+        // const mail_sent = await transport.sendMail(from,to,subject,data)
+        const mail_sent = await transport.sendMail(
+            {
+                from:"dhruviklathiya0811@gmail.com",
+                to:"princedonga41@gmail.com",
+                subject:"On this subject: DEMO MAIL",
+                text:"This is a nodemailer mail, This is a nodemailer mail, This is a nodemailer mail, This is a nodemailer mail, This is a nodemailer mail, This is a nodemailer mail, This is a nodemailer mail, This is a nodemailer mail, This is a nodemailer mail, This is a nodemailer mail, This is a nodemailer mail, This is a nodemailer mail, "
+            }
+        )
+
+        if(!mail_sent){
+            throw new Error("Try again")
+        }
+
+
         res.status(200).json({
             success: true,
-            message:"Admin created successfully",
+            message:"Admin created successfully & mail sent successfully",
             data: new_admin
         })
 
